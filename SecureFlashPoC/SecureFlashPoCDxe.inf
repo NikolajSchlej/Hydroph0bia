@@ -1,0 +1,25 @@
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = SecureFlashPoCDxe
+  FILE_GUID                      = cab058df-e938-4f85-8978-1f7e6aabdb99
+  MODULE_TYPE                    = DXE_DRIVER
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = SecureFlashPoCEntry
+
+[Sources.common]
+  SecureFlashPoC.c
+  
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+
+[LibraryClasses]
+  UefiBootServicesTableLib
+  UefiRuntimeServicesTableLib
+  UefiDriverEntryPoint
+
+[Protocols]
+  gEfiBdsArchProtocolGuid
+
+[Depex]
+  TRUE
